@@ -17,57 +17,54 @@ document.addEventListener('DOMContentLoaded', () => {
     elementTray.appendChild(titleTrayTab)
 
     })
-    document.querySelector()
+    // document.querySelector()
 });
 //Process code
-const typeField = document.querySelector('#typeField');
-const container = document.quertSelector('#container');
-const typed = document.querySelector('#typed');
-const btn = document.querySelector('#btn');
-const loader = document.querySelector('#loader');
+// const typeField = document.querySelector('#typeField');
+// const container = document.querySelector('#container');
+// const typed = document.querySelector('#typed');
+// const btn = document.querySelector('#btn');
+// const loader = document.querySelector('#loader');
 
-let index = 0;
-let arr = [];
+// let index = 0;
+// let arr = [];
+//  function process() {
+//      const para= document.createElement('p');
+//      typed.appendChild(para);
+//      typeField.innerText = '';
+//      typeField.focus();
+//      typeField.addEventListener('keydown', (event)=>{
+//          para.innerHTML = event.target.value;
+//      });
+//      btn.addEventListener('onclick', (event)=>{
+//          loading();
+//          console.log(event.target);
+//  	    const content = para.innerHTML;
+//          const obj = {title:'docName', content: content, key: index}
+//          arr.append(obj);
+//          para.innerHTML ='';
+//          process();
+//      })
+//  }
 
-// function process() {
-//     const para= document.createElement('p');
-//     typed.appendChild(para);
-//     typeField.innerText = '';
-//     typeField.focus();
-//     typeField.addEventListener('keydown', (event)=>{
-//         para.innerHTML = event.target.value;
-//     });
-//     btn.addEventListener('onclick', (event)=>{
-//         loading();
-//         console.log(event.target);
-//         const content = para.innerHTML;
-//         const obj = {title:'docName', content: content, key= index}
-//         arr.append(obj);
-//         para.innerHTML ='';
-//         process();
-//     })
-// }
+//  function loading() {
+//      loader.style.display = 'block';
+//      setTimeout(()=>{
+//          loader.style.zIndex = '1';
+//          loader.style.opacity = '1';
+//      }, 1000)
+//      setTimeout(()=>{
+//          loader.style.zIndex = '-1';
+//          loader.style.opacity = '0';
+//      }, 3000)
+//      setTimeout(()=>{
+//          loader.style.display = 'none';
+//      }, 5000)
+//  }
 
-// function loading() {
-//     loader.style.display = 'block';
-//     setTimeout(()=>{
-//         loader.style.zIndex = '1';
-//         loader.style.opacity = '1';
-//     }, 1000)
-    
-//     setTimeout(()=>{
-//         loader.style.zIndex = '-1';
-//         loader.style.opacity = '0';
-//     }, 3000)
-//     setTimeout(()=>{
-//         loader.style.display = 'none';
-//     }, 5000)
-// }
-
-// document.addEventListener('DOMContentLoaded', ()=>{
-//     process();
-// })
-
+//  document.addEventListener('DOMContentLoaded', ()=>{
+//      process();
+//  })
 function focus() {
     const para = document.querySelector('.para');
     textField.focus();
@@ -133,6 +130,31 @@ function copy(){
     copy.select();
     copy.setSelectionRange(0,99999);
     navigator.clipboard.writeText(copy.value);
+    alert("The text"+navigator.clipboardData);
 }
 cpy_btn.addEventListener('click',copy);
 
+var text='';
+
+document.querySelector('.para').addEventListener('mouseup',function(){
+
+    if(window.getSelection){
+        text= window.getSelection().toString()
+
+    }
+    document.getElementById('bold').addEventListener('click',function bold(){
+        var para_content=document.querySelector('.para').textContent
+        let bold_font = " <b>"+text+"</b> "  
+        document.querySelector('.para').innerHTML=para_content.replace(text,bold_font)
+    })
+    document.getElementById('italics').addEventListener('click',function italics(){
+        var para_content=document.querySelector('.para').textContent
+        let italics = "<i>"+text+"</i>"  
+        document.querySelector('.para').innerHTML=para_content.replace(text,italics)
+    })
+    document.getElementById('underline').addEventListener('click',function underline(){
+        var para_content=document.querySelector('.para').textContent
+        let underline = " <u>"+text+"</u> "  
+        document.querySelector('.para').innerHTML=para_content.replace(text,underline)
+    })
+})
