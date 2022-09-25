@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    let elementTray =document.getElementById('titlebar')
     const textField = document.querySelector('#inputText');
     const para = document.querySelector('.para');
     textField.focus();
@@ -6,6 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
         textField.focus();
         para.innerHTML = event.target.value;
     });
+
+
+    document.getElementById('add').addEventListener('click',function(){
+    var titleTrayTab=document.createElement('div')
+    var workspaceTab=document.createElement('p')
+    titleTrayTab.setAttribute('class','worktitle')
+    titleTrayTab.textContent="Workspace"
+    elementTray.appendChild(titleTrayTab)
+
+    })
+    document.querySelector()
 });
 
 function focus() {
@@ -31,3 +43,48 @@ function curtain() {
     }, 3000);
     curtain.style.top = "-100%";
 }
+// -----------------------------------------------------
+let cpy_btn=document.getElementById('cpy-btn')
+function variousOptions(){
+    var opts = document.getElementById("selection").selectedIndex;
+    var pick_btn=document.getElementById('pick');
+    var optns=document.getElementsByTagName('option')[opts];
+
+
+
+    if(optns.value==='Read'){
+        document.getElementById('inputText').addEventListener('keypress',function blockInput(e){
+            e.preventDefault();
+            e.stopPropagation();})
+            inputText.onpaste = function(event) {
+            alert("Pasting isnt allowed while in Read Mode");
+            event.preventDefault();
+          };
+        
+          inputText.oncut = inputText.oncopy = function(event) {
+            alert("Cutting/Copying isn't allowed while in Read Mode");
+            event.preventDefault();}
+
+        // pick_btn.setAttribute('type','button')
+        pick_btn.textContent='Pick Again'
+
+        cpy_btn.textContent="Reset Mode"
+   }
+   else if(optns.value==="Write"){
+    pick_btn.setAttribute('type','reset')
+    pick_btn.textContent="Reset Content"
+
+    document.querySelector('#pick').addEventListener('click',function(){
+        document.querySelector('.para').textContent=''
+    })
+   }
+   
+}
+function copy(){
+    var copy= document.getElementById('inputText');
+    copy.select();
+    copy.setSelectionRange(0,99999);
+    navigator.clipboard.writeText(copy.value);
+}
+cpy_btn.addEventListener('click',copy);
+

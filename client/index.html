@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script defer src="script.js"></script>
     <title>typingMania</title>
 </head>
+
 <body>
     <section id="landing-page">
         <h1>Welcome to typingMania</h1>
@@ -14,7 +18,7 @@
         <a onclick="curtain()">Start</a>
     </section>
 
-    
+
     <main>
         <section class="nav-bar">
             <header class="nav-header">
@@ -36,6 +40,14 @@
         </header>
         <div onclick="focus()" class="main-body">
             <!-- position mostly to the middle, covering majority of the viewport -->
+            <div id="titlebar">
+                <div class="worktitle">something</div>
+            </div>
+            <i class="fa fa-plus" aria-hidden="true" id="add"></i>
+            <select id="selection">
+                <option value="Read" name="modes">Read Mode</option>
+                <option value="Write" names="modes">Write Mode</option>
+            </select>
 
             <div class="type-container">
                 <div class="type-board">
@@ -56,7 +68,13 @@
 
         </aside>
         <section class="text-field">
-            <textarea name="inputText" id="inputText"></textarea>
+            <form>
+                <button type='button' onclick="variousOptions()" id="pick"> Pick</button>
+
+                <textarea name="inputText" id="inputText" ></textarea>
+                <!-- <input type='text' id="__copy__"> -->
+                <button id='cpy-btn'>Click to copy</button>
+            </form>
         </section>
     </main>
 
@@ -65,4 +83,5 @@
         <h4>Copyright &Copy; reserved by Bamjam101 Official</h4>
     </footer>
 </body>
+
 </html>

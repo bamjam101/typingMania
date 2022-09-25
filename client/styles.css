@@ -182,3 +182,35 @@ footer {
     opacity: 0;
     text-align: center;
 }
+/* ------------------------------------------------------------------- */
+#titlebar{    
+    display: flex;
+    border: 1px solid palevioletred;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.worktitle{
+    padding:10px;
+    text-align: center;
+    
+    transition: 0.5s ease-in-out;
+}
+.worktitle:hover{
+    flex-grow: 1;
+    width:10vw;
+    cursor: pointer;
+}
+i{
+    border:1px solid red;
+    border-radius: 20px;
+    float: right;
+}
+
+.text-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--bg-light); */
+    border-radius: 1rem;
+}
