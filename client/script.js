@@ -19,6 +19,54 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     document.querySelector()
 });
+//Process code
+const typeField = document.querySelector('#typeField');
+const container = document.quertSelector('#container');
+const typed = document.querySelector('#typed');
+const btn = document.querySelector('#btn');
+const loader = document.querySelector('#loader');
+
+let index = 0;
+let arr = [];
+
+// function process() {
+//     const para= document.createElement('p');
+//     typed.appendChild(para);
+//     typeField.innerText = '';
+//     typeField.focus();
+//     typeField.addEventListener('keydown', (event)=>{
+//         para.innerHTML = event.target.value;
+//     });
+//     btn.addEventListener('onclick', (event)=>{
+//         loading();
+//         console.log(event.target);
+//         const content = para.innerHTML;
+//         const obj = {title:'docName', content: content, key= index}
+//         arr.append(obj);
+//         para.innerHTML ='';
+//         process();
+//     })
+// }
+
+// function loading() {
+//     loader.style.display = 'block';
+//     setTimeout(()=>{
+//         loader.style.zIndex = '1';
+//         loader.style.opacity = '1';
+//     }, 1000)
+    
+//     setTimeout(()=>{
+//         loader.style.zIndex = '-1';
+//         loader.style.opacity = '0';
+//     }, 3000)
+//     setTimeout(()=>{
+//         loader.style.display = 'none';
+//     }, 5000)
+// }
+
+// document.addEventListener('DOMContentLoaded', ()=>{
+//     process();
+// })
 
 function focus() {
     const para = document.querySelector('.para');
