@@ -15,9 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
     titleTrayTab.setAttribute('class','worktitle')
     titleTrayTab.textContent="Workspace"
     elementTray.appendChild(titleTrayTab)
+    });
 
-    })
-    // document.querySelector()
+    // const title = document.getElementById('hidden-title-field');
+    // const titleField = document.getElementById('selectTitle');
+    // titleField.addEventListener('click', ()=> {
+    //     title.focus();
+    // });
+
+    // const body = document.getElementById('hidden-body-field');
+    // const bodyField = document.getElementById('selectBody');
+    // bodyField.addEventListener('click', ()=> {
+    //     body.focus();
+    // });
 });
 //Process code
 // const typeField = document.querySelector('#typeField');
@@ -65,10 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //  document.addEventListener('DOMContentLoaded', ()=>{
 //      process();
 //  })
-function focus() {
-    const para = document.querySelector('.para');
-    textField.focus();
-}
 
 function curtain() {
     const curtain = document.querySelector("#landing-page");

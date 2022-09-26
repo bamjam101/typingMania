@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script defer src="script.js"></script>
+    <script defer src="scriptnew.js"></script>
     <title>typingMania</title>
 </head>
 
@@ -18,72 +17,59 @@
         <a onclick="curtain()">Start</a>
     </section>
 
-
     <main>
-        <section class="nav-bar">
-            <header class="nav-header">
+        <section class="side-bar">
+            <header class="page-header">
                 <h1>Skriible</h1>
             </header>
-
-            <div class="nav-links-desktop">
-                <!-- position is going to be on-top -->
-                <ul>
-                    <li><a href="About">About</a></li>
-                    <li><a href="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </section>
-
-        <header>
-            <!-- contains name specified by the user using js -->
-            <h3>Document</h3>
-        </header>
-        <div onclick="focus()" class="main-body">
-            <!-- position mostly to the middle, covering majority of the viewport -->
-            <div id="titlebar">
-                <div class="worktitle">something</div>
-            </div>
-            <i class="fa fa-plus" aria-hidden="true" id="add"></i>
-            <i class="fa fa-bold" aria-hidden="true" id="bold"></i>
-            <i class="fa fa-italic" aria-hidden="true" id="italics"></i>
-            <i class="fa fa-underline" aria-hidden="true" id="underline"></i>
-            <select id="selection">
-                <option value="Read" name="modes">Read Mode</option>
-                <option value="Write" names="modes">Write Mode</option>
-            </select>
-
-            <div class="type-container">
-                <div class="type-board">
-                    <!-- this tracks for user keyboard input using js -->
-                    <p class="para"></p>
+            <div class="toolbar-mobile"></div>
+            <div class="toolbar">
+                <header>
+                    <h3>Tools</h3>
+                </header>
+                <!-- <i class="fa fa-plus" aria-hidden="true" id="add"></i> -->
+                <div class="tools">
+                    <i class="fa fa-bold" aria-hidden="true" id="bold"></i>
+                    <i class="fa fa-italic" aria-hidden="true" id="italics"></i>
+                    <i class="fa fa-underline" aria-hidden="true" id="underline"></i>
                 </div>
             </div>
-        </div>
-
-        <aside class="side-bar-desktop">
-            <!-- position is going to be vertical direction -->
-            <!-- <div class="nav-links-mobile">
-                <ul>
-                    <li><a href="About">About</a></li>
-                    <li><a href="Contact">Contact</a></li>
-                </ul>
-            </div> -->
-
-        </aside>
-        <section class="text-field">
-            <form>
-                <button type='button' onclick="variousOptions()" id="pick"> Pick</button>
-
-                <textarea name="inputText" id="inputText" ></textarea>
-                <!-- <input type='text' id="__copy__"> -->
-                <button id='cpy-btn'>Click to copy</button>
-            </form>
+            <div class="read-write-container">
+                <header>
+                    <h3>Choose read/write mode</h3>
+                </header>
+                <select id="selection">
+                        <option value="Read" name="modes">Read</option>
+                        <option value="Write" names="modes">Write</option>
+                </select>
+                <div class="option">
+                    <button type='button'onclick="variousOptions()" id="pick">Pick</button>
+                    <button id="cpy-btn">Copy</button>
+                </div>
+            </div>
+            <section class="text-field">
+                    <input type="text" name="inputTitle" id="inputTitle">
+                    <textarea name="inputText" id="inputText" ></textarea>
+            </section>
         </section>
+        <div class="preview">
+            <header class="doc-title">
+                <h3 class="title"></h3>
+            </header>
+            <div class="doc-body">
+                <p class="para"></p>
+            </div>
+        </div>
     </main>
 
+    <button id="btn">Save Note</button>
 
+    <section class="notes-container">
+        <div class="notes-interface">
+        </div>
+    </section>
     <footer>
-        <h4>Copyright &Copy; reserved by Bamjam101 Official</h4>
+        <h4>Copyright &Copy; reserved by SYNX Hackathon Unit</h4>
     </footer>
 </body>
 
