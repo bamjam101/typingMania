@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('add').addEventListener('click',function(){
     var titleTrayTab=document.createElement('div')
-    var workspaceTab=document.createElement('p')
+    // var workspaceTab=document.createElement('p')
     titleTrayTab.setAttribute('class','worktitle')
     titleTrayTab.textContent="Workspace"
     elementTray.appendChild(titleTrayTab)
@@ -130,7 +130,7 @@ function copy(){
     copy.select();
     copy.setSelectionRange(0,99999);
     navigator.clipboard.writeText(copy.value);
-    alert("The text"+navigator.clipboardData);
+    // alert("The text"+navigator.clipboardData);
 }
 cpy_btn.addEventListener('click',copy);
 
